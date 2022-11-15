@@ -32,12 +32,13 @@ const QuoteForm = (props) => {
 
   return (
     <Fragment>
-      <Prompt
+      {/* The Prompt Element is not supported in React Router 6 */}
+      {/* <Prompt
         when={isEntering}
         message={(location) =>
           'Are you sure you want to leave? All your entered data will be lost!'
         }
-      />
+      /> */}
       <Card>
         <form
           onFocus={formFocusedHandler}
@@ -59,7 +60,9 @@ const QuoteForm = (props) => {
             <textarea id='text' rows='5' ref={textInputRef}></textarea>
           </div>
           <div className={classes.actions}>
-            <button onClick={finishEnteringHandler} className='btn'>Add Quote</button>
+            <button onClick={finishEnteringHandler} className='btn'>
+              Add Quote
+            </button>
           </div>
         </form>
       </Card>
